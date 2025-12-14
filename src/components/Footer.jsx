@@ -1,24 +1,26 @@
-import {View, Text, Image, StyleSheet, Button} from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import {View, Text, Image, StyleSheet, Button, Pressable} from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 function Footer() {
+  const nav = useNavigation();
   return (
     <View style={Styles.footerContainer}>
       <SafeAreaView style={Styles.navBar}>
-        <View style={Styles.item}>
+        <Pressable onPress={() => nav.navigate("Analytics")}style={Styles.item}>
           <Image style={Styles.images} source={require("../assets/pie-chart-fill 1.png")} />
           <Text style={Styles.text}>ANALYTICS</Text>
-        </View>
+        </Pressable>
 
-        <View style={Styles.item}>
+        <Pressable onPress={() => nav.navigate("Home")} style={Styles.item}>
           <Image style={Styles.images} source={require("../assets/house 1.png")} />
           <Text style={Styles.text}>HOME</Text>
-        </View>
+        </Pressable>
 
-        <View style={Styles.item}>
+        <Pressable onPress={() => nav.navigate("Settings")} style={Styles.item}>
           <Image style={Styles.images} source={require("../assets/Vector.png")} />
           <Text style={Styles.text}>SETTINGS</Text>
-        </View>
+        </Pressable>
       </SafeAreaView>
     </View>
   );

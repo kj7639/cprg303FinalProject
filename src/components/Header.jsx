@@ -1,13 +1,18 @@
-import {View, Text, Image, StyleSheet, Button} from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import {View, Text, Image, StyleSheet, Button, Pressable} from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 function Header()
 {
+
+  const nav = useNavigation();
   return (
     <View style={Styles.headerContainer}>
-      <SafeAreaView style={Styles.navBar} >
-        <Image style={Styles.image} source={require("../assets/logo.png")}/>
-        <Text style={Styles.text}>BUDGETLY</Text> 
+      <SafeAreaView>
+        <Pressable onPress={() => nav.navigate("Home")} style={Styles.navBar}>
+          <Image style={Styles.image} source={require("../assets/logo.png")}/>
+          <Text style={Styles.text}>BUDGETLY</Text> 
+        </Pressable>
       </SafeAreaView>
     </View>
   )
@@ -15,10 +20,7 @@ function Header()
 
 const Styles = StyleSheet.create({
   headerContainer: {
-    position: "absolute",
-    width: "100%",
-    top: 0
-  
+    width: "100%"
   },
 
   image: {

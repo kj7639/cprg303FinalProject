@@ -3,15 +3,15 @@ import {Header} from '../components/Header';
 import {Footer} from '../components/Footer';
 import { View } from 'react-native';
 
-function AnalyticsScreen(){
+function SettingsScreen(){
     return (
         <View style={{flex : 1}}>
             <Header/>
-            <Text>Analytics</Text>
+            <Text>Settings</Text>
             <Footer/>
         </View>
         
     );
 }
 
-export default AnalyticsScreen;
+export default SettingsScreen;
