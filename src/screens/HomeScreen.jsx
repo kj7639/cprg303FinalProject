@@ -1,8 +1,14 @@
-import {Text} from 'react-native'
+import {Text, Button, View} from 'react-native'
 
-function HomeScreen(){
+function HomeScreen({navigation}){
     return (
-        <Text>Home</Text>
+        <View>
+            <Text>Home</Text>
+            <Button
+                title='Analytics'
+                onPress={() => navigation.navigate('Analytics')}
+            />
+        </View>
     );
 }
 
