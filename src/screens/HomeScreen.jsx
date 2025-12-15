@@ -1,4 +1,4 @@
-import {Text, Button, View} from 'react-native'
+import {Text, Button, View, StyleSheet} from 'react-native'
 import { useState } from 'react';
 
 import transactionsData from '../data/transactions.json'
@@ -10,15 +10,30 @@ function HomeScreen({navigation}){
     console.log(transactions);
 
     return (
-        <View>
-            <Text>Home</Text>
+        <View style={styles.container}>
             <Activity transactions={transactions}/>
-            <Button
+            {/* <Button
                 title='Analytics'
                 onPress={() => navigation.navigate('Analytics')}
-            />
+            /> */}
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center'
+    },
+    title: {
+        fontSize: 18,
+    },
+    item: {
+        paddingVertical: 2,
+        paddingHorizontal: 20,
+        margin: 4,
+        backgroundColor: '#b3b3b3ff'
+    }
+})
 
 export default HomeScreen;
