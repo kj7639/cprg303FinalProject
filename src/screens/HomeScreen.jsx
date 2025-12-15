@@ -1,4 +1,4 @@
-import {Text, Button, View, StyleSheet} from 'react-native'
+import {Text, Button, View, StyleSheet, ScrollView} from 'react-native'
 import { useState } from 'react';
 
 import transactionsData from '../data/transactions.json'
@@ -17,12 +17,12 @@ function HomeScreen({navigation}){
 
     return (
         <View style={styles.container}>
-            <Activity transactions={transactions}/>
-            <AddTransaction addTransaction={addTransaction}/>
-        <View style={{flex : 1}}>
             <Header/>
-            <Text>Home</Text>
-            <Activity transactions={transactions}/>
+            <ScrollView>
+                <Activity transactions={transactions}/>
+                <AddTransaction addTransaction={addTransaction} transactions={transactions}/>
+                <View style={{height: 200}}></View>
+            </ScrollView>
             <Footer/>
         </View>
     );
