@@ -3,19 +3,20 @@ import { useState } from 'react';
 
 import transactionsData from '../data/transactions.json'
 import Activity from '../components/Activity';
+import AddTransaction from '../components/AddTransaction';
 
 function HomeScreen({navigation}){
 
     const [transactions, setTransactions] = useState(transactionsData);
-    console.log(transactions);
+
+    const addTransaction = (transaction) => {
+        setTransactions([...transactions, transaction]);
+    }
 
     return (
         <View style={styles.container}>
             <Activity transactions={transactions}/>
-            {/* <Button
-                title='Analytics'
-                onPress={() => navigation.navigate('Analytics')}
-            /> */}
+            <AddTransaction addTransaction={addTransaction}/>
         </View>
     );
 }

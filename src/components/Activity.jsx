@@ -73,8 +73,9 @@ function Activity({transactions}){
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        alignItems: 'center'
+        // flex: 1,
+        alignItems: 'center',
+        paddingBottom: 25,
     },
     title: {
         fontSize: 22,
