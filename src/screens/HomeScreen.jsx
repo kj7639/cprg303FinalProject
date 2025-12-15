@@ -4,6 +4,8 @@ import { useState } from 'react';
 import transactionsData from '../data/transactions.json'
 import Activity from '../components/Activity';
 import AddTransaction from '../components/AddTransaction';
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 
 function HomeScreen({navigation}){
 
@@ -17,6 +19,11 @@ function HomeScreen({navigation}){
         <View style={styles.container}>
             <Activity transactions={transactions}/>
             <AddTransaction addTransaction={addTransaction}/>
+        <View style={{flex : 1}}>
+            <Header/>
+            <Text>Home</Text>
+            <Activity transactions={transactions}/>
+            <Footer/>
         </View>
     );
 }
