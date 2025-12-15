@@ -17,10 +17,6 @@ function Footer() {
           <Text style={Styles.text}>HOME</Text>
         </Pressable>
 
-        <Pressable onPress={() => nav.navigate("Settings")} style={Styles.item}>
-          <Image style={Styles.images} source={require("../assets/Vector.png")} />
-          <Text style={Styles.text}>SETTINGS</Text>
-        </Pressable>
       </SafeAreaView>
     </View>
   );
