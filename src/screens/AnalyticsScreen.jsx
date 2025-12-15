@@ -1,12 +1,16 @@
-import { View, Text } from "react-native"
+import {Text, View} from 'react-native'
 
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 
 function AnalyticsScreen(){
-  return(
-    <View>
-      <Text>Test</Text>
-    </View>
-  )
+    return(
+        <View style={{flex: 1}}>
+            <Header/>
+            <Text>Analytics</Text>
+            <Footer/>
+        </View>
+    )
 }
 
 export default AnalyticsScreen;

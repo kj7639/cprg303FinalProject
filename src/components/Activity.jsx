@@ -1,11 +1,10 @@
 import {
     Text,
     View,
-    StyleSheet
+    StyleSheet,
 } from 'react-native'
 
 import { useState, useEffect } from 'react';
-import { Color } from 'react-native/types_generated/Libraries/Animated/AnimatedExports';
 
 function Activity({transactions}){
     const [posTotal, setPosTotal] = useState(0);
@@ -75,11 +74,11 @@ const styles = StyleSheet.create({
     container: {
         // flex: 1,
         alignItems: 'center',
-        paddingBottom: 25,
+        paddingBottom: 15,
     },
     title: {
         fontSize: 22,
-        paddingTop: 20,
+        // paddingTop: 5,
         paddingBottom: 7,
     },
     item: {
