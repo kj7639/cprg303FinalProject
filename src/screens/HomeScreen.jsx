@@ -38,16 +38,16 @@ function HomeScreen({navigation}){
     return (
         <View style={styles.container}>
             <Header/>
-            <View style={{width: 200, borderColor: 'black', borderWidth: 1}}>
-                <Picker selectedValue={chartYear} onValueChange={setChartYear}>
-                    {years.map(year => <Picker.Item key={year} label={year.toString()} value={year} />)}
-                </Picker>
-
-                <Picker selectedValue={chartMonth} onValueChange={setChartMonth}>
-                    {months.map(month => <Picker.Item key={month.value} label={month.label} value={month.value} />)}
-                </Picker>
-            </View>
             <ScrollView style={{flex : 1}} contentContainerStyle={{paddingBottom: 100}}>
+                <View style={{width: 200, borderColor: 'black', borderWidth: 1, alignSelf: 'center'}}>
+                    <Picker selectedValue={chartYear} onValueChange={setChartYear}>
+                        {years.map(year => <Picker.Item key={year} label={year.toString()} value={year} />)}
+                    </Picker>
+
+                    <Picker selectedValue={chartMonth} onValueChange={setChartMonth}>
+                        {months.map(month => <Picker.Item key={month.value} label={month.label} value={month.value} />)}
+                    </Picker>
+                </View>
                 <AnalyticsChart transactions={transactions} year={chartYear} month={chartMonth}/>
                 <Activity transactions={transactions}/>
                 <AddTransaction addTransaction={addTransaction}/> 
