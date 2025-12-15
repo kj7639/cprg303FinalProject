@@ -202,6 +202,7 @@ export default function AnalyticsScreen() {
       />
     </View>
   );
+
 }
 
 const styles = StyleSheet.create({
